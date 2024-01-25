@@ -1,13 +1,13 @@
-package org.launchcode.controllers;
+package src.main.java.org.launchcode.controllers;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
+import src.main.java.org.launchcode.data.Planets;
 
-@Controller
+@Controller()
 public class PlanetController {
-
-    @GetMapping
-    public String displayIndex() {
+    @GetMapping()
+    public String displayIndex(Model model) {
+        model.addAttribute("planets", Planets.values());
         return "index";
     }
 }
